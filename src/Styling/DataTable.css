@@ -6,3 +6,9 @@
   max-height: 300px;
   overflow: scroll;
 }
+
+@media (max-width: 1280px) {
+  .dataTable {
+    max-width: 90%;
+  }
+}

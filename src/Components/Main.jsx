@@ -24,7 +24,7 @@ function Header() {
   }, [error]);
   //   console.log("queries are :: ", table);
 
-  const loadData = () => {
+  const loadData = async () => {
     setData([]);
     if (
       (!toggle && query === "None") ||
@@ -37,6 +37,31 @@ function Header() {
       return;
     }
     setLoading(true);
+    let api = getApi();
+    await axios
+      .get(api)
+      .then((res) => {
+        console.log("Data is :: ", res.data);
+        const responseData = res.data;
+        setData(responseData);
+        setLoading(false);
+        if (responseData && responseData.length === 0) {
+          setError("No data found");
+        }
+      })
+      .catch((err) => {
+        console.log("Error in loading data :: ", err);
+        setLoading(false);
+        setError("No data found");
+      });
+  };
+
+  const handleClose = () => {
+    setSnackBarOpen(false);
+    setError("");
+  };
+
+  const getApi = () => {
     let api = "/D9FCVp/customers";
     switch (table) {
       case 0:
@@ -65,30 +90,8 @@ function Header() {
       default:
         break;
     }
-
-    axios
-      .get(api)
-      .then((res) => {
-        console.log("Data is :: ", res.data);
-        const responseData = res.data;
-        setData(responseData);
-        setLoading(false);
-        if (responseData && responseData.length === 0) {
-          setError("No data found");
-        }
-      })
-      .catch((err) => {
-        console.log("Error in load data :: ", err);
-        setLoading(false);
-        setError("No data found");
-      });
+    return api;
   };
-
-  const handleClose = () => {
-    setSnackBarOpen(false);
-    setError("");
-  };
-
   // console.log(toggle);
 
   return (

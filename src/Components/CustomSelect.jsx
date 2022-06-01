@@ -15,7 +15,7 @@ function CustomSelect({
 }) {
   const handleChange = (event) => {
     setData([]);
-    setCustomQuery("#write your query here");
+    setCustomQuery("");
     const inputValue = event.target.value;
     if (selectName === "Schemas") {
       setTable(inputValue);
@@ -30,12 +30,10 @@ function CustomSelect({
   return (
     <div>
       <FormControl sx={{ m: 1, minWidth: 200 }}>
-        <InputLabel id="demo-simple-select-helper-label">
-          {selectName}
-        </InputLabel>
+        <InputLabel id={selectName}>{selectName}</InputLabel>
         <Select
-          labelId="demo-simple-select-helper-label"
-          id="demo-simple-select-helper"
+          labelId={selectName}
+          id={selectName}
           value={selectName === "Schemas" ? table : query}
           label={selectName}
           disabled={selectName !== "Schemas" && isCustom ? true : false}
