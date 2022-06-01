@@ -47,8 +47,10 @@ function DataTable({ loading, data }) {
             <TableRow>
               {data &&
                 data.length > 0 &&
-                Object.keys(data[0]).map((header) => {
-                  return <StyledTableCell>{header}</StyledTableCell>;
+                Object.keys(data[0]).map((header, index) => {
+                  return (
+                    <StyledTableCell key={index}>{header}</StyledTableCell>
+                  );
                 })}
             </TableRow>
           </TableHead>

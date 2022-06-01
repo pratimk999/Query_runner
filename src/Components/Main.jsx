@@ -96,7 +96,7 @@ function Header() {
 
   return (
     <div className="main">
-      <div className="heading">SQL QUERY RUNNER</div>
+      <h1 className="heading">SQL QUERY RUNNER</h1>
       <div className="form_page">
         <CustomSelect
           selectName="Schemas"
