@@ -6,3 +6,20 @@ body {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 } */
+
+#root ::-webkit-scrollbar {
+  height: 4px;
+  width: 5px;
+}
+#root ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+#root ::-webkit-scrollbar-thumb {
+  background: rgb(180, 176, 176);
+  border-radius: 5px;
+}
+
+#root ::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
