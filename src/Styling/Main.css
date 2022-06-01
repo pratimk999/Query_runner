@@ -1,0 +1,41 @@
+.main {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100ch;
+  height: 100%;
+  /* overflow: scroll; */
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  margin: 20px;
+  color: #1913ae;
+  font-style: italic;
+  letter-spacing: 1.7px;
+}
+
+.form_page {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.codeEditor {
+  margin: 20px 30px 20px 30px;
+}
+
+.MuiButton-root {
+  margin: 20px !important;
+}
+
+@media (max-width: 300px) {
+  .main {
+    font-size: 10px;
+  }
+}
