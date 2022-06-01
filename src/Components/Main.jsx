@@ -136,7 +136,7 @@ function Header() {
         <Editor customQuery={customQuery} setCustomQuery={setCustomQuery} />
       )}
       <Button variant="contained" onClick={loadData}>
-        Submit
+        Run
       </Button>
       <DataTable loading={loading} data={data} />
       <CustomSnacbar
